@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>六角形コッホ曲線 - 雪の結晶から学ぶフラクタル幾何学 | Jimitas.com 地味に助かる学習コンテンツ</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Jimitas.com 地味に助かる学習コンテンツ - 六角形ベースのコッホ曲線を美しいアニメーションで描画できる無料学習ツール。雪の結晶の形成原理とフラクタル幾何学を視覚的に理解。中学数学・高校数学の図形分野、理科の結晶構造学習に最適。レベル0-5で複雑さを調整可能。">
+    <meta name="keywords" content="コッホ曲線, フラクタル, 六角形, 雪の結晶, 数学, 幾何学, 学習ツール, アニメーション, 教育コンテンツ, jimitas, jimitas.com, 地味に助かる, 中学数学, 高校数学, 図形, 理科, 結晶構造, 無料教材, オンライン学習, STEM教育, 数学教材, インタラクティブ, ビジュアル学習">
+    <meta name="author" content="Jimitas.com">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="Japanese">
+    <meta name="revisit-after" content="7 days">
+    <link rel="canonical" href="https://jimitas.com/koch-curve-app/">
+
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="六角形コッホ曲線 - 雪の結晶から学ぶフラクタル幾何学 | Jimitas.com">
+    <meta property="og:description" content="Jimitas.com 地味に助かる学習コンテンツ - 六角形ベースのコッホ曲線を美しいアニメーションで描画。中学・高校の数学と理科の学習に最適な無料教材。">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Jimitas.com - 地味に助かる学習コンテンツ">
+    <meta property="og:url" content="https://jimitas.com/koch-curve-app/">
+    <meta property="og:locale" content="ja_JP">
+
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="六角形コッホ曲線 - Jimitas.com 地味に助かる学習コンテンツ">
+    <meta name="twitter:description" content="無料で使える数学・理科の学習ツール。フラクタル幾何学を美しいアニメーションで視覚的に理解。中学・高校生向け。">
+    <meta name="twitter:site" content="@jimitas">
+
+    <!-- Educational Content Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LearningResource",
+        "name": "六角形コッホ曲線 - Jimitas.com",
+        "description": "Jimitas.com 地味に助かる学習コンテンツ - 六角形ベースのコッホ曲線を美しいアニメーションで描画できる無料学習ツール",
+        "educationalLevel": "中学生〜高校生",
+        "url": "https://jimitas.com/koch-curve-app/",
+        "inLanguage": "ja",
+        "isAccessibleForFree": true,
+        "keywords": "数学,理科,フラクタル,幾何学,コッホ曲線,中学数学,高校数学,STEM教育",
+        "learningResourceType": "Interactive Tool",
+        "about": [
+            {
+                "@type": "Thing",
+                "name": "フラクタル幾何学"
+            },
+            {
+                "@type": "Thing",
+                "name": "コッホ曲線"
+            },
+            {
+                "@type": "Thing",
+                "name": "数学"
+            }
+        ],
+        "provider": {
+            "@type": "Organization",
+            "name": "Jimitas.com",
+            "description": "地味に助かる学習コンテンツ",
+            "url": "https://jimitas.com",
+            "sameAs": [
+                "https://github.com/jimitas",
+                "https://twitter.com/jimitas"
+            ]
+        }
+    }
+    </script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>六角形コッホ曲線</h1>
+
+        <div class="controls">
+            <div class="level-controls">
+                <button class="level-btn" data-level="0">0</button>
+                <button class="level-btn" data-level="1">1</button>
+                <button class="level-btn" data-level="2">2</button>
+                <button class="level-btn" data-level="3">3</button>
+                <button class="level-btn" data-level="4">4</button>
+                <button class="level-btn" data-level="5">5</button>
+            </div>
+
+            <div class="direction-toggle">
+                <button id="directionToggle" class="toggle-btn">
+                    <span class="toggle-text">内側</span>
+                    <div class="toggle-slider"></div>
+                </button>
+            </div>
+
+            <div class="edge-mode-toggle">
+                <label class="checkbox-container">
+                    <input type="checkbox" id="edgeModeToggle">
+                    <span class="checkmark"></span>
+                    <span class="checkbox-text">1辺だけ拡大表示</span>
+                </label>
+            </div>
+
+            <div id="toast" class="toast">描画中です。お待ちください...</div>
+        </div>
+
+        <div class="canvas-container">
+            <div class="loading-overlay" id="loadingOverlay">
+                <div class="loading-spinner">
+                    <div class="spinner-hexagon"></div>
+                    <div class="spinner-text">描画中...</div>
+                </div>
+            </div>
+            <canvas id="kochCanvas"></canvas>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
